@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produits Longrich - Sophie Gueye</title>
+<style>
+body{font-family:Arial, sans-serif;margin:0;background:#f5f7fa;color:#333}
+header{background:#0a7cff;color:white;padding:20px;text-align:center}
+.container{padding:20px}
+.product{background:white;padding:15px;margin:10px 0;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+button{background:#25D366;color:white;border:none;padding:10px 15px;border-radius:5px;cursor:pointer}
+button:hover{background:#1ebe5d}
+footer{text-align:center;padding:20px;font-size:14px}
+</style>
+</head>
+<body>
+<header>
+<h1>Produits Longrich</h1>
+<p>Distribués par Sophie Gueye</p>
+</header>
+<div class="container">
+
+<h2>Beauté & Soins</h2>
+<div class="product">Savon au charbon de bambou<button onclick="order('Savon charbon')">Commander</button></div>
+<div class="product">Lait de corps SOD<button onclick="order('Lait SOD')">Commander</button></div>
+<div class="product">Masque facial<button onclick="order('Masque facial')">Commander</button></div>
+
+<h2>Hygiène</h2>
+<div class="product">Dentifrice White Tea<button onclick="order('Dentifrice')">Commander</button></div>
+<div class="product">Déodorant<button onclick="order('Déodorant')">Commander</button></div>
+
+<h2>Santé</h2>
+<div class="product">Calcium<button onclick="order('Calcium')">Commander</button></div>
+<div class="product">Café Cordyceps<button onclick="order('Café')">Commander</button></div>
+
+<h2>Maison</h2>
+<div class="product">Gobelet alcalin<button onclick="order('Gobelet')">Commander</button></div>
+
+</div>
+
+<footer>
+Contact WhatsApp : 77 091 95 84
+</footer>
+
+<script>
+function order(product){
+let phone='221770919584';
+let message=`Bonjour, je veux commander : ${product}`;
+window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,'_blank');
+}
+</script>
+</body>
+</html>
