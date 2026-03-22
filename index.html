@@ -3,39 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Produits Longrich - Sophie Gueye</title>
+<title>Longrich - Sophie Gueye</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial, sans-serif;margin:0;background:#f5f7fa;color:#333}
-header{background:#0a7cff;color:white;padding:20px;text-align:center}
+body{font-family:'Poppins',sans-serif;margin:0;background:#f0f4f8;color:#333}
+header{background:linear-gradient(135deg,#0a7cff,#00c6ff);color:white;padding:30px;text-align:center}
+header h1{margin:0;font-size:28px}
+header p{margin:5px 0 0}
 .container{padding:20px}
-.product{background:white;padding:15px;margin:10px 0;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
-button{background:#25D366;color:white;border:none;padding:10px 15px;border-radius:5px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:0.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-content{padding:15px}
+.card h3{margin:0 0 10px;font-size:18px}
+.card p{font-size:14px;color:#666}
+button{background:#25D366;color:white;border:none;padding:10px;width:100%;border-radius:8px;cursor:pointer;font-weight:600}
 button:hover{background:#1ebe5d}
-footer{text-align:center;padding:20px;font-size:14px}
+.section-title{margin-top:30px;font-weight:600}
+footer{text-align:center;padding:20px;font-size:14px;color:#777}
 </style>
 </head>
 <body>
+
 <header>
 <h1>Produits Longrich</h1>
 <p>Distribués par Sophie Gueye</p>
 </header>
+
 <div class="container">
 
-<h2>Beauté & Soins</h2>
-<div class="product">Savon au charbon de bambou<button onclick="order('Savon charbon')">Commander</button></div>
-<div class="product">Lait de corps SOD<button onclick="order('Lait SOD')">Commander</button></div>
-<div class="product">Masque facial<button onclick="order('Masque facial')">Commander</button></div>
+<h2 class="section-title">Beauté & Soins</h2>
+<div class="grid">
+<div class="card">
+<img src="https://via.placeholder.com/300x200?text=Savon+Charbon">
+<div class="card-content">
+<h3>Savon au charbon</h3>
+<p>Anti-acné, peau grasse</p>
+<button onclick="order('Savon charbon')">Commander</button>
+</div>
+</div>
 
-<h2>Hygiène</h2>
-<div class="product">Dentifrice White Tea<button onclick="order('Dentifrice')">Commander</button></div>
-<div class="product">Déodorant<button onclick="order('Déodorant')">Commander</button></div>
+<div class="card">
+<img src="lait.jpeg">
+<div class="card-content">
+<h3>Lait de corps SOD</h3>
+<p>Hydratant, réparateur</p>
+<button onclick="order('Lait SOD')">Commander</button>
+</div>
+</div>
+</div>
 
-<h2>Santé</h2>
-<div class="product">Calcium<button onclick="order('Calcium')">Commander</button></div>
-<div class="product">Café Cordyceps<button onclick="order('Café')">Commander</button></div>
+<h2 class="section-title">Hygiène</h2>
+<div class="grid">
+<div class="card">
+<img src="https://via.placeholder.com/300x200?text=Dentifrice">
+<div class="card-content">
+<h3>Dentifrice White Tea</h3>
+<p>Fraîcheur durable</p>
+<button onclick="order('Dentifrice')">Commander</button>
+</div>
+</div>
+</div>
 
-<h2>Maison</h2>
-<div class="product">Gobelet alcalin<button onclick="order('Gobelet')">Commander</button></div>
+<h2 class="section-title">Santé</h2>
+<div class="grid">
+<div class="card">
+<img src="https://via.placeholder.com/300x200?text=Cafe+Cordyceps">
+<div class="card-content">
+<h3>Café Cordyceps</h3>
+<p>Énergie naturelle</p>
+<button onclick="order('Café Cordyceps')">Commander</button>
+</div>
+</div>
+</div>
 
 </div>
 
@@ -46,9 +87,11 @@ Contact WhatsApp : 77 091 95 84
 <script>
 function order(product){
 let phone='221770919584';
-let message=`Bonjour 👋 Merci d’avoir contacté Sophie Longrich ! Je souhaite commander : ${product}`;
+let message=`Bonjour, je veux commander : ${product}`;
 window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,'_blank');
 }
 </script>
+
 </body>
 </html>
+s
