@@ -14,7 +14,12 @@ header p{margin:5px 0 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
 .card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:0.3s}
 .card:hover{transform:translateY(-5px)}
-.card img{width:100%;height:180px;object-fit:cover}
+.card img{
+  width: 100%;
+  height: 180px;
+  object-fit: contain; /* au lieu de cover */
+  background: #f9f9f9;
+}
 .card-content{padding:15px}
 .card h3{margin:0 0 10px;font-size:18px}
 .card p{font-size:14px;color:#666}
@@ -22,6 +27,60 @@ button{background:#25D366;color:white;border:none;padding:10px;width:100%;border
 button:hover{background:#1ebe5d}
 .section-title{margin-top:30px;font-weight:600}
 footer{text-align:center;padding:20px;font-size:14px;color:#777}
+
+.images-horizontal{
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.images-horizontal img{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.price{
+  font-weight: bold;
+  color: #0a7cff;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Carte horizontale */
+.horizontal-card{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Images */
+.images-horizontal{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.images-horizontal img{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Contenu */
+.card-content{
+  flex: 1;
+}
+
+.price{
+  font-weight: bold;
+  color: #0a7cff;
+  margin: 10px 0;
+}
 </style>
 </head>
 <body>
@@ -34,25 +93,229 @@ footer{text-align:center;padding:20px;font-size:14px;color:#777}
 <div class="container">
 
 <h2 class="section-title">Beauté & Soins</h2>
-<div class="grid">
-<div class="card">
-<img src="https://via.placeholder.com/300x200?text=Savon+Charbon">
-<div class="card-content">
-<h3>Savon au charbon</h3>
-<p>Anti-acné, peau grasse</p>
-<button onclick="order('Savon charbon')">Commander</button>
-</div>
+
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="savon1.jpeg" alt="">
+    <img src="savon2.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Savon au charbon</h3>
+    
+    <p><strong>Traitement :</strong><br>
+    - Élimine les boutons et l’acné<br>
+    - Nettoie en profondeur la peau<br>
+    - Réduit l’excès de sébum<br>
+    - Rend la peau douce et claire
+    </p>
+
+    <p class="price">3000 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+
 </div>
 
-<div class="card">
-<img src="lait.jpeg">
-<div class="card-content">
-<h3>Lait de corps SOD</h3>
-<p>Hydratant, réparateur</p>
-<button onclick="order('Lait SOD')">Commander</button>
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="Pate dentifrice thé blanc.jpeg" alt="">
+   <img src="Dents blanches.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Pate dentifrice thé blanc/ Formule sans Fluor 200g et 100g</h3>
+    
+    <p><strong>Traitement :</strong><br>
+    - Mauvaise haleine<br>
+    - Carie et Saignements des gencives<br>
+    </p>
+
+    <p class="price">3000 FCFA et 5000 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+
 </div>
+
+
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="lotion rajeunissant.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Lotion Rajeunissant</h3>
+    
+    <p><strong>Traitement :</strong><br>
+    - Rajéunit<br>
+    - Régénére<br>
+    - Rend la peau douce et claire<br>
+    </p>
+
+    <p class="price">5500 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+
 </div>
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="SOD.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Lait de Corps SOD</h3>
+
+    <p><strong>Traitement :</strong><br>
+    - Teint naturel<br>
+    - Fait briller la peau<br>
+    - N'éclaircit pas ni ne noircit pas<br>
+    </p>
+
+    <p class="price">5400 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+
 </div>
+
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="Huile de serpent.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Lait de Corps SOD</h3>
+
+    <p><strong>Traitement :</strong><br>
+    - Idéal pour les cheveux<br>
+    - Massage pour le corps<br>
+    </p>
+
+    <p class="price">6000 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+
+</div>
+
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="Gel Huile de serpent.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Gel Huile de serpent</h3>
+
+    <p><strong>Traitement :</strong><br>
+    - Traite la peau et les douleurs musculaires<br>
+    </p>
+
+    <p class="price">5000 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+
+</div>
+
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="Créme main et Pied.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Créme pour la main et le pied</h3>
+
+    <p><strong>Traitement :</strong><br>
+    - Empéche les irritations et les phares<br>
+    - Adoucit les paumes<br>
+    </p>
+
+    <p class="price">5000 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+
+</div>
+
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="Anti moustiques.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Anti moustiques</h3>
+
+    <p><strong>Traitement :</strong><br>
+    - A Pulvériser sur les parties exposées du corps<br>
+    </p>
+
+    <p class="price">5000 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+</div>
+
+
+<div class="card horizontal-card">
+
+  <!-- Images -->
+  <div class="images-horizontal">
+    <img src="Déodorant anti transpirant.jpeg" alt="">
+    <img src="Déodorant anti transpirant.jpeg" alt="">
+  </div>
+
+  <!-- Contenu -->
+  <div class="card-content">
+    <h3>Déodorant anti transpirant</h3>
+
+    <p><strong>Traitement :</strong><br>
+    - Frais, parfume et ne tache pas les vétements<br>
+    </p>
+
+    <p class="price">5000 FCFA / unité</p>
+
+    <button onclick="order('Savon charbon')">Commander</button>
+  </div>
+</div>
+
+
+
+ 
+
 
 <h2 class="section-title">Hygiène</h2>
 <div class="grid">
@@ -94,4 +357,3 @@ window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,'_blank
 
 </body>
 </html>
-s
